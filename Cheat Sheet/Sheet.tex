@@ -1,0 +1,211 @@
+\documentclass[11pt,a4paper]{article}
+
+% ---------- PACKAGES ----------
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.75in]{geometry}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{amssymb}
+
+% ---------- COLORS / STYLE ----------
+\definecolor{accent}{RGB}{39,116,174}
+\definecolor{darkgray}{RGB}{50,50,50}
+
+\titleformat{\section}
+{\Large\bfseries\color{accent}}
+{\thesection}{1em}{}[\titlerule]
+
+\titleformat{\subsection}
+{\large\bfseries\color{darkgray}}
+{\thesubsection}{1em}{}
+
+\setlist[itemize]{leftmargin=*, itemsep=0.2em, topsep=0.2em}
+\setlist[enumerate]{leftmargin=*, itemsep=0.2em, topsep=0.2em}
+
+% ---------- SIMPLE BOX MACRO ----------
+\newcommand{\scriptbox}[1]{%
+	\noindent\fbox{%
+		\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{#1}%
+	}%
+}
+
+\begin{document}
+	
+	% =========================================================
+	% HEADER (TEMPLATE: NO PERSONAL INFO)
+	% =========================================================
+	\begin{center}
+		{\Huge \textbf{PhD Interview Cheatsheet}}\\
+		\vspace{0.15cm}
+		{\Large \textbf{Program / School:} \underline{\hspace{7cm}}}\\
+		\vspace{0.10cm}
+		{\large \textbf{Name:} \underline{\hspace{6.9cm}} \quad
+			\textbf{Date:} \underline{\hspace{3cm}}}
+	\end{center}
+	
+	\vspace{0.2cm}
+	
+	% =========================================================
+	\section{Elevator Pitch (Tell Me About Yourself)}
+	\textit{Goal: Connect prior training to the target field; show trajectory + motivation + fit.}
+	
+	\begin{itemize}
+		\item \textbf{Background:} Final-year undergraduate at \underline{\hspace{4cm}}; exchange/research at \underline{\hspace{3.5cm}}.
+		\item \textbf{Academic core:} Major/minor in \underline{\hspace{4cm}}; strong quantitative foundation in \underline{\hspace{4cm}}.
+		\item \textbf{Pivot / motivation:} From \underline{\hspace{4cm}} $\rightarrow$ toward \underline{\hspace{4cm}} due to \underline{\hspace{4cm}}.
+		\item \textbf{Current focus:} Applying \underline{\hspace{3.5cm}} (e.g., control/RL) and \underline{\hspace{3.5cm}} (e.g., networks) to \underline{\hspace{4cm}}.
+		\item \textbf{Why PhD:} To develop \underline{\hspace{4cm}} models/methods that produce \underline{\hspace{4cm}} insights + translate to \underline{\hspace{3.5cm}}.
+	\end{itemize}
+	
+	\vspace{0.15cm}
+	
+	\scriptbox{%
+		\vspace{0.1cm}
+		\textbf{\large Sample Script (Read/Paraphrase):}\\
+		\vspace{0.1cm}
+		\itshape
+		``My name is \underline{\hspace{4cm}}, and I'm a final-year undergraduate at \underline{\hspace{5cm}}.
+		
+		\vspace{0.15cm}
+		I study \textbf{\underline{\hspace{5cm}}}. Early on, I worked on \underline{\hspace{5cm}} (e.g., optimization / ML / theory). Over time, I became increasingly drawn to \textbf{\underline{\hspace{5cm}}} because \underline{\hspace{6cm}}.
+		
+		\vspace{0.15cm}
+		Recently, I've been applying \textbf{\underline{\hspace{6cm}}} to \underline{\hspace{6cm}}. I'm pursuing a PhD to bridge disciplines---using rigorous modeling to understand \textbf{\underline{\hspace{5cm}}}, generate predictive insights, and uncover underlying mechanisms.''%
+		\vspace{0.1cm}
+	}
+	
+	% =========================================================
+	\section{Key Research Projects (Deep Dives)}
+	% Tip: keep 2--4 projects; each with 3 bullets and 3 Q\&A max.
+	
+	% ------------------------------
+	\subsection{Project A (Template)}
+	\textbf{Title:} \textit{\underline{\hspace{12cm}}}
+	
+	\textbf{One-line summary:} \underline{\hspace{14.2cm}}
+	
+	\textbf{Problem / Why it matters:}
+	\begin{itemize}
+		\item \underline{\hspace{14.2cm}}
+	\end{itemize}
+	
+	\textbf{Method / What you did:}
+	\begin{itemize}
+		\item \underline{\hspace{14.2cm}}
+		\item \underline{\hspace{14.2cm}}
+	\end{itemize}
+	
+	\textbf{Results / Evidence:}
+	\begin{itemize}
+		\item \underline{\hspace{14.2cm}}
+	\end{itemize}
+	
+	\textbf{Your contribution (be explicit):}
+	\begin{itemize}
+		\item \underline{\hspace{14.2cm}}
+	\end{itemize}
+	
+	\textbf{Possible Q \& A:}
+	\begin{itemize}
+		\item \textbf{Q: What is the main takeaway?}\\
+		\textbf{A:} \underline{\hspace{14.2cm}}
+		\item \textbf{Q: What was the hardest part technically?}\\
+		\textbf{A:} \underline{\hspace{14.2cm}}
+		\item \textbf{Q: What would you do next if you had 6 more months?}\\
+		\textbf{A:} \underline{\hspace{14.2cm}}
+	\end{itemize}
+	
+	% ------------------------------
+	\subsection{Project B (Template)}
+	\textbf{Title:} \textit{\underline{\hspace{12cm}}}
+	
+	\textbf{Summary:}
+	\begin{itemize}
+		\item \underline{\hspace{14.2cm}}
+		\item \underline{\hspace{14.2cm}}
+	\end{itemize}
+	
+	\textbf{Key contributions (3 max):}
+	\begin{itemize}
+		\item \textbf{\underline{\hspace{5cm}}:} \underline{\hspace{8.7cm}}
+		\item \textbf{\underline{\hspace{5cm}}:} \underline{\hspace{8.7cm}}
+		\item \textbf{\underline{\hspace{5cm}}:} \underline{\hspace{8.7cm}}
+	\end{itemize}
+	
+	\textbf{Possible Q \& A:}
+	\begin{itemize}
+		\item \textbf{Q: Why did you choose this modeling approach?}\\
+		\textbf{A:} \underline{\hspace{14.2cm}}
+		\item \textbf{Q: How did you validate the model?}\\
+		\textbf{A:} \underline{\hspace{14.2cm}}
+	\end{itemize}
+	
+	% ------------------------------
+	\subsection{Project C (Template)}
+	\textbf{Title:} \textit{\underline{\hspace{12cm}}}
+	
+	\textbf{Summary:} \underline{\hspace{14.2cm}}
+	
+	\textbf{Key contributions:}
+	\begin{itemize}
+		\item \underline{\hspace{14.2cm}}
+		\item \underline{\hspace{14.2cm}}
+	\end{itemize}
+	
+	\textbf{Possible Q \& A:}
+	\begin{itemize}
+		\item \textbf{Q: What does this show about the underlying mechanism?}\\
+		\textbf{A:} \underline{\hspace{14.2cm}}
+	\end{itemize}
+	
+	% =========================================================
+	\section{Addressing a Non-Linear Background (e.g., Econ/Finance $\rightarrow$ Biology)}
+	\textit{Use this when asked ``Why this field now?'' Keep it human + technical.}
+	
+	\textbf{Personal motivation (optional, 2--3 sentences):}\\
+	\underline{\hspace{14.2cm}}\\
+	\underline{\hspace{14.2cm}}
+	
+	\vspace{0.1cm}
+	\textbf{Technical continuity (make the bridge explicit):}
+	\begin{itemize}
+		\item Common structure: \underline{\hspace{12.2cm}}
+		\item Transferable tools: \underline{\hspace{12.2cm}}
+		\item What changed: from optimizing \underline{\hspace{3cm}} to optimizing/understanding \underline{\hspace{4cm}}
+	\end{itemize}
+	
+	\vspace{0.1cm}
+	\textbf{Philosophy (1--2 lines):}\\
+	\underline{\hspace{14.2cm}}
+	
+	% =========================================================
+	\section{Soft Skills \& Teaching / Collaboration}
+	\begin{itemize}
+		\item \textbf{Communication:} \underline{\hspace{13cm}}
+		\item \textbf{Collaboration:} \underline{\hspace{13.4cm}}
+		\item \textbf{Mentoring/Teaching:} \underline{\hspace{12.2cm}}
+		\item \textbf{Value proposition:} I can \underline{\hspace{10.3cm}}
+	\end{itemize}
+	
+	% =========================================================
+	\section{Why This Program? \& Questions for Them}
+	\subsection{Why this program / group? (3 bullets max)}
+	\begin{itemize}
+		\item \textbf{Research fit:} \underline{\hspace{12.6cm}}
+		\item \textbf{Training fit:} \underline{\hspace{12.9cm}}
+		\item \textbf{Community/resources:} \underline{\hspace{11.7cm}}
+	\end{itemize}
+	
+	\subsection{Questions to Ask (pick 2)}
+	\begin{enumerate}
+		\item \textit{``What does a successful first year look like in your group (skills, milestones, reading, projects)?''}
+		\item \textit{``How do you decide problem selection and scope---especially balancing publishability vs.\ risk?''}
+		\item \textit{``How does collaboration typically work in your lab/group (expectations, co-mentorship, authorship norms)?''}
+		\item \textit{``What training opportunities exist for my current gaps (e.g., wet-lab exposure, clinical context, data access)?''}
+	\end{enumerate}
+	
+
+	
+\end{document}
