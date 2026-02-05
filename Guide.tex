@@ -1,0 +1,855 @@
+\documentclass[a4paper,11pt,oneside]{book}
+
+% =========================================
+%    PACKAGES & SETUP
+% =========================================
+
+% 1. Encoding and Fonts
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern} 
+\usepackage{microtype} 
+
+% 2. Mathematics 
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{mathtools}
+
+% 3. Layout and Margins
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{fancyhdr} 
+
+% 4. Graphics and Colors
+\usepackage{graphicx}
+\usepackage{xcolor}
+\definecolor{hkugreen}{RGB}{0, 125, 85}
+\definecolor{lightgreen}{RGB}{235, 250, 245}
+
+% 5. Navigation (Hyperlinks)
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=blue,
+	pdftitle={HKU Maths Survival Compass},
+}
+
+% 6. Custom Boxes for "Survival Tips"
+\usepackage{tcolorbox}
+\newtcolorbox{survivaltip}[1][]{
+	colback=lightgreen,
+	colframe=hkugreen,
+	fonttitle=\bfseries,
+	title=Survival Tip #1
+}
+
+% =========================================
+%    THEOREM ENVIRONMENTS
+% =========================================
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{example}{Example}[chapter]
+
+% =========================================
+%    HEADER/FOOTER CONFIG
+% =========================================
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\slshape \leftmark}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% =========================================
+%    DOCUMENT BEGINS
+% =========================================
+\begin{document}
+	
+	% --- TITLE PAGE ---
+	\begin{titlepage}
+		\centering
+		\vspace*{3cm}
+		
+		% Title: Significantly larger size
+		{\fontsize{50}{60}\selectfont \bfseries \color{hkugreen} The Survival Compass \par}
+		
+		\vspace{1.5cm}
+		
+		% Subtitle
+		{\Huge \itshape For HKU Mathematics Students \par}
+		
+		\vfill
+		
+		% Authors and Date
+		{\Large \textbf{Written by:}} \\
+		\vspace{0.2cm}
+		{\large A Group of Seniors} \\
+		
+		\vspace{1cm}
+		
+		{\Large \textbf{Date:}} \\
+		\vspace{0.2cm}
+		{\large \today}
+		
+		\vspace{3cm}
+	\end{titlepage}
+	
+	% --- FRONT MATTER ---
+	\frontmatter
+	
+\chapter{Preface}
+
+Welcome to the \textbf{Survival Compass} for HKU Mathematics students.
+
+Majoring in Mathematics is a beautiful---and demanding---journey. This guide collects
+practical advice passed down from seniors, written for students who are considering (or
+already aiming for) a PhD in \textbf{Applied Mathematics and related applied sciences}, and
+an academic or research-oriented career. Our goal is simple: to help you navigate HKU with
+fewer detours, fewer avoidable mistakes, and a clearer sense of what to prioritize.
+
+\section*{Who is this for?}
+This guide is written \textbf{intentionally for Year~1 freshmen}. Many of the highest-impact
+decisions---course sequencing, GPA strategy, early research attempts, and exchange planning---are
+easiest (and safest) to make in your first year.
+
+If you are in \textbf{Year~2}, most of the advice should still be applicable, though you may need
+to adapt details based on what you have already taken and which opportunities you have already
+missed or secured. If you are in \textbf{Year~3 or above}, you may find parts of this document less
+useful, because many strategic options discussed here (especially foundational course planning,
+early research pathways, and certain administrative timing choices) are harder to change later on.
+
+Please also note that this guide is \textbf{not} primarily written for students whose main objective
+is to build an internship-heavy profile for immediate entry into industry after graduation, nor for
+those targeting a professional master's degree as their end goal. Some parts may still be useful,
+but the strategies and trade-offs discussed here assume that \emph{research preparation} is the
+central constraint.
+
+The content is also intentionally skewed toward \textbf{applied fields}. Students leaning toward
+Pure Mathematics may still find sections helpful (e.g., course planning, proof-based habits, and
+research preparation), but many recommendations are optimized for applied directions.
+
+
+
+\section*{A living document}
+This draft was finalized in \textbf{2026}. Policies, course offerings, and the academic
+landscape change. For that reason, we are distributing this guide together with its \LaTeX{}
+source.
+
+We encourage you to adapt, update, and improve it for the next generation of students. If you
+found something outdated, incomplete, or simply wrong, please fix it and pass it on.
+
+
+\vspace{4em}
+\noindent
+\textit{May your proofs be elegant and your coffee strong.}
+	
+	\tableofcontents
+	
+	% --- MAIN MATTER ---
+	\mainmatter
+	
+	% =========================================
+	%    CHAPTER 1
+	% =========================================
+\chapter{Foundations \& Major Decisions}
+
+First, congratulations on your acceptance to HKU! As one of the leading universities in Asia, HKU offers a vibrant environment. You have likely already received a deluge of emails regarding orientation and campus life, so we will skip the pleasantries and dive straight into the first major hurdle: **Major Selection**.
+
+\section*{The "Stepping Stone" Trap}
+From the authors' experience, many students choose to major in Mathematics believing it is an easy transition point to other subjects like Finance or Computer Science later. While there is some logic to this, we wish to issue a strong warning: **the extra effort required is immense.**
+
+To be honest, if your ultimate goal is to transfer into the Engineering or Finance industries, the advanced math courses you take (beyond Linear Algebra and Calculus) may be of little practical use. 
+
+Year 1 is a crucial year to maintain a high GPA, as advanced courses only get harder. If you feel uncomfortable when taking your first abstract math courses (especially Algebra and Analysis), \textbf{please feel free to switch!} It is definitely not your fault. Unlike many other universities, transferring majors and faculties is relatively easy at HKU. Avoiding a math major has no negative effect on your future success; Finance, Economics, and Law offer great paths to achievement (and, as far as we observe, often with a much manageable workload than Math).
+
+However, if you are determined to take Math as your major—you are a tough soul—let us investigate the path ahead.
+
+\section{Major Selection}
+HKU offers great flexibility; you can take almost any second major (except Medicine and Law). For students aiming for a PhD or a research career, combining Math with a second major is recommended. Here are the common combinations:
+
+
+
+% --- 1. THE PURE TRACK ---
+\subsection*{Option A: The "Math Intensive" Track}
+This branch is designed for students devoted to \textbf{Pure Mathematics}. It effectively requires double the credits of a standard Mathematics major to graduate. Since this document is aimed primarily at the Applied Mathematics trajectory, we will skip a detailed discussion of this track here.
+
+% --- 2. THE DOUBLE MAJOR TRACKS ---
+\subsection*{Option B: Double Majors (Recommended)}
+
+\subsubsection*{1. Mathematics + Statistics}
+This is the broadest and most highly recommended combination. It opens up almost all quantitative research directions you could imagine.
+\begin{itemize}
+	\item \textbf{Pros:} Extremely versatile for research.
+	\item \textbf{Cons:} 
+	\begin{itemize}
+		\item \textbf{GPA Risk:} You must be ready to face the difficulty. Taking two rigorous quantitative majors increases the risk of a lower GPA, which can be destructive to future PhD applications.
+		\item \textbf{Grading:} You may think Math grading is harsh, but be warned: Statistics courses at HKU are even more notorious for low grades and strict curves than Mathematics.
+	\end{itemize}
+\end{itemize}
+
+\subsubsection*{2. Mathematics + Computer Science (CS)}
+Another highly suggested combination. While perhaps slightly less broad than Statistics in terms of pure theory, CS and AI are the dominant fields of this era.
+\begin{itemize}
+	\item \textbf{Pros:} High industry and research value. Sacrificing some theoretical breadth for AI/Computing skills is often worth it.
+	\item \textbf{Cons:} 
+	\begin{itemize}
+		\item \textbf{Difficulty:} Like Statistics, the workload is heavy.
+		\item \textbf{Logistics:} Course selection can be a nightmare. MATH resides in the Faculty of Science, while CS belongs to the School of Computing and Data Science (CDS). These different faculties often schedule courses with time clashes.
+		\item \textbf{Enrollment:} Because CS is so popular, quota limits are strict. You may not be able to enroll in the specific courses you want every semester.
+	\end{itemize}
+\end{itemize}
+
+\subsubsection*{3. Mathematics + Domain Specifics (Econ / Finance / Biology, etc.)}
+These combinations are usually for students who are determined to go into a specific industry. However, since you are only in Year 1, we generally recommend staying broad to explore.
+\begin{itemize}
+	\item \textbf{Pros:} Courses from the Faculty of Business and Economics (FBE) are generally considered easier to grade than Math. It is often possible to achieve an A/A+ through self-study.
+	\item \textbf{Cons:} Enrollment priority. FBE guarantees spots for their own students first; as a Science student, you may struggle to enroll in popular finance courses.
+\end{itemize}
+
+
+\section{Course Selection}
+
+
+
+
+
+
+\subsection{General Tools and Administration}
+Navigating the administrative side of course selection is a skill in itself. Here is how to handle the common "red tape" scenarios.
+\subsubsection{Skipping Prerequisites}
+University courses usually follow a strict chain where Course A is a prerequisite for Course B. However, Mathematics is unique; many students enter with strong backgrounds and wish to jump directly into advanced courses in Year 1 or 2. To skip a prerequisite, you must submit a \textbf{Course Approval Form}. Math professors are usually very lenient regarding this—you simply need to provide a reasonable justification (using ChatGPT to draft a polite reason is a common strategy). Be warned that other faculties, such as FBE, are often much stricter.
+
+\subsubsection{Time Clashes}
+To take two courses scheduled at the same time, you must also use the \textbf{Course Approval Form}. You need to obtain permission from the instructors of \textbf{both} conflicting courses. While Math teachers are usually accommodating, do not expect professors from other departments to be as lenient.
+
+\subsubsection{Overloading (Course Load Deviation)}
+The standard limit is 6 courses (36 credits) per semester and 12 courses (72 credits) per year. If you are a capable student who wishes to exceed this (usually up to a maximum of 14 courses per year), you must submit an application for \textbf{Taking Course Load Deviating from Normal Load}. Please note that if you take summer courses, they also count toward this annual credit limit.
+
+\subsubsection{Application Portal}
+All forms for the three issues above (Prerequisites, Time Clashes, and Overloading) are found on the Science Online Application Submission System (OASS): \\
+\url{https://webapp.science.hku.hk/intranet/servlet/OnlineFormUG}
+
+\subsubsection{Essential Websites}
+\begin{itemize}
+	\item \textbf{RicHKU} (\url{https://richku.com}): Use this to manage your schedule and, crucially, to check \textbf{course comments} from previous students.
+	\item \textbf{HKU Class Planner} (\url{https://class-planner.hku.hk/}): Use this to visualize your timetable and check the real-time \textbf{quota} (available seats) of specific courses.
+\end{itemize}
+
+\subsection{Common Core and CAES1000}
+This section covers two mandatory requirements that are often considered "GPA traps" for science students: Common Core courses and Core University English.
+
+\subsubsection{Common Core Courses (CC)}
+BSc students are required to complete 6 Common Core courses across different categories.
+\begin{itemize}
+	\item \textbf{The Official Advice:} The university suggests finishing these within your first three years.
+	\item \textbf{Our Advice:} \textbf{Ignore the official advice.} These courses are non-major requirements that heavily rely on group projects, presentations, and essays—skills that are often uncorrelated with the effort you put in. It is common for straight-A Math students to end up with a B or C in these courses due to subjective grading or "freerider" teammates.
+\end{itemize}
+
+\noindent \textbf{Strategic Planning:}
+\begin{enumerate}
+	\item \textbf{Delay until Year 4:} PhD applications usually begin in the first semester of Year 4, meaning admissions committees only see your GPA from the first three years. By pushing these "risky" courses to your final year, you protect your application GPA.
+	\item \textbf{Skill Development:} By Year 4, you will have naturally developed better soft skills (speaking, presentation), making these courses easier.
+	\item \textbf{Team Up:} Take courses with friends to avoid the "freerider" problem of being grouped with strangers.
+	\item \textbf{Credit Transfer:} Try to take equivalent courses during summer exchange programs or at other schools. These often transfer as "Pass/Fail" and will not drag down your GPA.
+\end{enumerate}
+
+
+
+\subsubsection{Credit Transfer for CC}
+A smart strategy to fulfill Common Core requirements without risking your GPA is to transfer credits from external programs. Many of these can be done online and are often free or subsidized. Applications are submitted via the Faculty of Science Online Credit Transfer Application
+System (OCTAS):
+\url{https://webapp.science.hku.hk/intranet/servlet/exs/application#}
+
+\noindent \textbf{Recommended Programs:}
+\begin{itemize}
+	\item \textbf{APRU Virtual Student Exchange (VSE):} \\
+	\url{https://vse.apru.org} \\
+	This program allows you to take online academic courses from member universities across the Pacific Rim. These are generally free for HKU students and can be transferred back to fulfill CC requirements.
+	
+	\item \textbf{HKU China Vision:} \\
+	\url{https://chinavision.hku.hk} \\
+	This initiative offers various cultural tours, field studies, and semester study options. Look specifically for their online programmes. 
+	
+	\item \textbf{UIBE (University of International Business and Economics):} \\
+	While some summer schools charge fees, HKU students often receive vouchers for UIBE courses. Always check for current funding or voucher availability before applying.
+\end{itemize}
+
+\noindent \textbf{Course Mapping Resources:}
+To determine which external course corresponds to a specific HKU Common Core, you can consult the following:
+\begin{enumerate}
+	\item \textbf{FBE Credit Transfer Database:} Useful for checking previously approved mappings: \url{https://www.fbeitt.hku.hk/exchange-ctdb/}.
+	\item \textbf{Triple Uni / Pupu (Unofficial Platform):} \\
+	This is a student-run platform that aggregates credit transfer data.
+	\\
+	\textbf{Warning:} \textit{This platform is unmoderated and "dirty." The discussion sections frequently contain toxic behavior, abusive language, and extreme content. We strongly advise using it \underline{strictly} for its database functionality and ignoring the community/forum aspects entirely.}
+\end{enumerate}
+
+And usually, there is a limit for transferring credits. At present(2026), students from the Faculty of Science can transfer at most \textbf{3 Common Core (CC) courses}.
+
+Below is a list of CCs that seniors have found to have a light workload and a tendency to award good grades:
+
+\begin{itemize}
+	\item \textbf{CCST9017} -- Hidden Order in Daily Life: A Mathematical Perspective
+	\item \textbf{CCCH9018} -- Buddhism and Chinese Culture
+	\item \textbf{CCHU9005} -- Food and Values
+\end{itemize}
+
+
+
+
+
+
+\subsubsection{CAES1000: Core University English}
+This is a mandatory Year 1 course. Like Common Core, the grading can be highly subjective and it is often viewed as a waste of time for students with strong English proficiency.
+
+\noindent \textbf{The Strategy: Exemption} \\
+It is far easier (and safer for your GPA) to obtain an exemption than to take the course. If you are exempted, the course becomes optional (though you must take an elective in lieu).
+
+\noindent \textbf{Exemption Criteria (Year 1 Entry):} \\
+You are eligible for exemption if you meet one of the following criteria (among others) prior to admission:
+\begin{itemize}
+	\item \textbf{HKDSE (JUPAS):} Level 5 or above in English Language (Automatic exemption).
+	\item \textbf{IELTS:} Overall score $\ge 7$ AND all sub-scores $\ge 6.5$ (within 2 years).
+	\item \textbf{TOEFL iBT:} Overall $\ge 94$; Writing $\ge 24$; Speaking $\ge 20$; Listening $\ge 20$; Reading $\ge 19$ (within 2 years).
+	\item \textbf{IB Diploma:} Grade 4 (A1/A HL) or Grade 5 (B HL/SL).
+	\item \textbf{GCE A-Level:} Grade A or above.
+	\item \textbf{SAT:} Score of 35 or above on both Writing \& Language and Reading.
+\end{itemize}
+
+\begin{survivaltip}[: If you must take it]
+	If you unfortunately do not meet the exemption criteria, you must enroll in Year 1. Please use \textbf{RicHKU} to check comments from previous students regarding which instructors tend to give better grades.
+	
+	Then, feel free to use AI. We have seen cases where students received a C- for self-written essays but significantly higher grades (A range) when utilizing AI tools for assistance. While we do not condone academic dishonesty, be aware that ``polishing'' your work is necessary to survive this course.
+\end{survivaltip}
+	
+\subsection{Math Major Courses}
+Now that we have navigated the obstacles of Common Core and CAES, we can focus on the core of your degree: the Mathematics Major.
+
+\subsubsection{Year 1: The Aggressive Start}
+Standard advice might suggest taking courses slowly, but for a serious Math major, you should aim for the following combination in your first semester:
+
+\noindent \textbf{Semester 1:}
+\begin{itemize}
+	\item \textbf{MATH1013} University Mathematics II
+	\item \textbf{MATH2012} Fundamental Concepts of Mathematics
+	\item \textbf{MATH2101} Linear Algebra I
+\end{itemize}
+
+\noindent \textbf{The Prerequisite Hurdle:} \\
+You will immediately encounter a system error because MATH1013 is officially a prerequisite for the other two. \textbf{Action:} Do not let this stop you. Use the Course Approval Form to skip the prerequisite.
+
+\noindent \textbf{Semester 2 (The Litmus Test):} \\
+By clearing the intro courses early, you can take the "real" math courses in Semester 2:
+\begin{itemize}
+	\item \textbf{MATH2241} Introduction to Mathematical Analysis
+	\item \textbf{MATH2102} Linear Algebra II
+	\item \textbf{MATH2211} Multivariable Calculus
+\end{itemize}
+\noindent \textit{\textbf{Reality Check:} Your comfort level with these three courses---especially MATH2241 and MATH2102 (and subsequently MATH3401 Analysis I)---is the best predictor of your future success. If you enjoy the abstraction, you fit the major. Otherwise, you probably need to reconsider whether a Mathematics major is the right path for you.}
+
+\subsubsection{Subsequent Course Selection Strategy}
+
+\noindent \textbf{1. Probability (Top Priority)} \\
+Take \textbf{MATH3603 Probability Theory} as soon as possible. It is a fundamental prerequisite for Operations Research (OR) and biological research.
+
+\noindent \textbf{2. Optimization and Operations Research} \\
+If you are interested in this track, consider the following:
+\begin{itemize}
+	\item \textbf{MATH3901} Operations Research I
+	\item \textbf{MATH4902} Operations Research II
+	\item \textbf{MATH3904} Introduction to Optimization
+	\item \textbf{MATH3601} Numerical Analysis
+	\item \textbf{MATH4602} Scientific Computing
+	\item \textbf{MATH3405} Differential Equations
+	\item \textbf{MATH4406} Introduction to Partial Differential Equations
+\end{itemize}
+
+
+And if you intend to work on algorithms (e.g., analyzing convergence rates), you need a deep background in analysis. All analysis courses are necessary (except perhaps Complex Analysis for this specific purpose), especially these 2 courses:
+
+\begin{itemize}
+	\item \textbf{MATH4404} Functional Analysis
+	\item \textbf{MATH7505} Real Analysis (Graduate Level)
+\end{itemize}
+
+\subsubsection{Discrete Mathematics: A Critical Warning}
+When selecting Discrete Math courses, many students naturally look at \textbf{MATH3600 Discrete Mathematics} and \textbf{MATH3943 Network Models in OR}.
+
+\noindent \textbf{Warning:} These courses are typically taught by Dr. Law Ka Ho. Based on extensive student feedback, these courses are frequently cited for having the "worst" teaching quality and irresponsible management. \textbf{We strongly advise avoiding them.}
+
+\noindent \textbf{The Recommended Path:} \\
+Instead, you should take the following sequence:
+\begin{enumerate}
+	\item \textbf{MATH3301} Algebra I
+	\item \textbf{MATH7502} Topics in Applied Discrete Mathematics
+\end{enumerate}
+MATH7502 is a graduate-level course taught by \textbf{Prof. Zang}, the Chair Professor and a leading figure in the field. Despite being a graduate course, he is known for giving very lenient grades, making it a superior choice for both learning and GPA.
+
+\subsubsection{Special Recommendation: Complex Analysis}
+It is highly suggested that you take \textbf{MATH7101 Intermediate Complex Analysis} (after completing the prerequisite MATH3403 Functions of a Complex Variable).
+\\
+\textbf{Reason:} MATH7101 is taught by \textbf{Prof. Mok}, the most eminent professor in HKU (a frequent ICM speaker). Taking a course under his instruction is a unique opportunity.
+
+
+\begin{survivaltip}[: Course Selection \& Resources]
+	It is always highly recommended to connect with seniors to consult on course selection strategies. Additionally, try to identify and team up with the strong students in your cohort (you will quickly recognize the ``math gods" among you); taking courses with them can be incredibly beneficial for study groups and projects.
+	
+
+
+\end{survivaltip}
+
+
+\subsection{Know Where You Stand: Global Benchmarking}
+
+To truly gauge your readiness for a top-tier PhD, you must look beyond the Kennedy Town campus. You should periodically assess your knowledge depth against peers from Tsinghua University, Peking University, C9 League universities, top American schools, and prestigious European institutions.
+
+\paragraph{Awareness, Not Anxiety}
+This comparison is \textit{not} meant to demoralize you. It is not about having to outdo them or dropping out if you can't. Everyone learns at a different pace. It is very likely that you learn slowly at the beginning but will learn better later on. That is entirely okay.
+
+\paragraph{Identify the Gaps}
+However, it is essential to be clear about your own level. You must identify what you still lack, noting which aspects HKU covers in depth and which are covered less rigorously compared to top global programs. Then, based on your personal situation, look for online courses or self-study from extracurricular books to supplement your knowledge.
+
+
+\section{Embrace AI Tools Early}
+
+For Year 1 starters, it is highly recommended to integrate AI tools into your workflow as soon as possible. In this era, Generative AI has evolved into the ultimate encyclopedia and personal research assistant. You can utilize it for almost anything: quickly grasping a new mathematical concept, debugging code, drafting essays, or evaluating your semester study plans. As of the writing of this guide, direct access to official platforms like OpenAI (ChatGPT) and Google (Gemini) remains restricted in Hong Kong. While you can utilize a VPN, we recommend using an aggregator platform for stability and access to multiple models.\\
+
+\noindent 
+\url{https://poe.com} is a platform that synthesizes various top-tier AI agents into a single interface. Through Poe, you can access cutting-edge models such as \textbf{GPT-5.2}, \textbf{Claude-Sonnet-4.5}, \textbf{Gemini-3-Pro}, and \textbf{DeepSeek-R1} all in one place. The subscription cost is approximately HKD 1,300 per year. We strongly advise you to take it. Do not view this as an expense, but as a tuition cost. The productivity boost and learning assistance you will gain far outweigh the price tag.
+
+
+
+\chapter{Navigate Your Path into Research}
+
+A common misconception among freshmen is, ``I am only in Year 1 with very little knowledge; isn't it too early to start research?"
+
+The answer is a resounding \textbf{no}. You should start your research journey as soon as possible. Immersing yourself in the research atmosphere and exploring potential directions early is vital. In fact, for many Applied Mathematics topics, you can start working meaningfully once you have mastered \textbf{Linear Algebra} and \textbf{Multivariable Calculus}.
+
+One crucial note before you begin: \textbf{do not attempt to start your research journey entirely on your own.} You need to find a supervisor who can lead your path. Research is not just about reading papers; it is about asking the right questions. Without a mentor to guide your trajectory, you risk wasting time on solved problems or getting stuck in dead ends.
+
+
+So, get started! Do not waste your long summer in Year 1.
+
+\section{Year 1 Summer: Initial Research Attempts}
+Our school offers two primary programs for aspiring researchers:
+
+\subsection{Laidlaw Scholars Programme}
+\url{https://tl.hku.hk/horizons/laidlaw/}
+
+\noindent \textbf{Overview:} \\
+This is a prestigious scholarship programme funded by Lord Laidlaw of Rothiemay, available to Year 1 and Year 2 students (GPA 3.0+). It is distinct because it requires a commitment to \textbf{two consecutive summers}:
+\begin{itemize}
+	\item \textbf{Summer 1 (Research):} You receive a weekly stipend (HK\$2,000 for local, HK\$5,000 for overseas) for up to 6 weeks to work on a research project under a faculty supervisor.
+	\item \textbf{Summer 2 (Leadership-in-Action):} You participate in a leadership expedition (with up to HK\$15,000 travel support) to apply your skills to real-world problems and help disadvantaged communities.
+\end{itemize}
+\textit{Note: The application deadline is typically in February. You must contact a supervisor and secure their support before applying.}
+
+\subsection{EUREKA – Undergraduate Research Programme}
+\url{https://eureka.hku.hk}
+
+\noindent \textbf{Overview:} \\
+EUREKA offers inquiry-based research projects specifically designed for students in the early years of their study. Unlike many voluntary research roles, this is a \textbf{credit-bearing} pathway.
+\begin{itemize}
+	\item \textbf{Structure:} It spans one academic year. You must first complete an online module, "Introduction to Research Methods" (1 credit, Out-of-Classroom Learning Award).
+	\item \textbf{The Project:} Upon completion of the module, you can undertake the Eureka research project (usually in Semester 2) under an academic mentor. This counts as a \textbf{6-credit free elective}.
+	\item \textbf{Summer Opportunities:} EUREKA also facilitates specific summer fellowships (e.g., the L.C.K. Yung Global Studies Summer Fellowship) which may offer stipends.
+\end{itemize}
+
+\vspace{1em}
+\noindent \textbf{A Word of Encouragement:} \\
+Please do not fear rejection. Be brave enough to reach out to professors and discuss ideas with them! Most students feel overwhelmed by new concepts and terminology at first. Remember: you can always learn what you don't know. Do not be afraid of making mistakes—they are the mother of great research!
+
+\subsection{Summer Homework: Master \LaTeX}
+Regardless of whether you join a formal research program, there is one non-negotiable task you must complete during your Year 1 summer: \textbf{Master \LaTeX}.
+
+\LaTeX\ is the standard typesetting system for mathematics and science. As a math major, Microsoft Word is no longer sufficient. You will need \LaTeX\ to type up your research findings, submit advanced course assignments, and eventually write your thesis.
+
+\noindent \textbf{Advice on Learning:} \\
+You do not have to become a syntax expert overnight. Your goal should be to grasp the basics of document structure and equation formatting. Nowadays, you can simply type the general content and use AI tools to polish the code or debug errors. Here is a good tutorial series to get you started: \\
+\url{https://www.youtube.com/watch?v=Jp0lPj2-DQA&list=PLHXZ9OQGMqxcWWkx2DMnQmj5os2X5ZR73}
+
+
+
+
+\section{Year 2: Deepening Your Foundation}
+Congratulations on successfully navigating Year 1. By now, you have likely completed several core mathematics courses and perhaps even dipped your toes into preliminary research.
+
+Year 2 is a critical transition period where things get harder but more rewarding. You will likely start taking 3000-level mathematics courses and should aim to deepen your research engagement. It is highly recommended to continue the project you started during your Year 1 summer or explore a new topic with your supervisor.
+
+Aside from coursework and research, two major administrative tasks require your attention this year: Applying for Exchange and the Summer Research Fellowship (SRF).
+
+\subsection{Apply for Exchange}
+
+This is a crucial strategic step. Since our ultimate goal is to apply for top graduate schools (particularly in the US), we must seize the opportunity for exchange in Year 3.
+
+\noindent \textbf{Timing Strategy: Semester 1 vs. Semester 2} \\
+You should definitely opt for \textbf{Year 3 Semester 2}.
+\\ \textit{Reason:} This timing allows you to seamlessly transition into a summer research position at your exchange institution (or another nearby US institution) during the summer after Year 3. We will discuss this critical "Research Internship" strategy in the next chapter.
+
+\subsubsection{Option A: HKU Worldwide Exchange (HKUWW)}
+Most students go abroad through the HKU Worldwide Undergraduate Student Exchange Programme (HKUWW).
+\\ \url{https://intlaffairs.hku.hk/hku-worldwide-student-exchange}
+
+\noindent \textbf{Key Application Details (Plan Ahead):}
+\begin{itemize}
+	\item \textbf{Timeline:} The Main Round application typically opens in \textbf{October of Year 2} (e.g., Oct 20) and closes in \textbf{December}. Do not miss this window.
+	\item \textbf{Eligibility:} While the official requirement is a CGPA of 3.0+, this is far from sufficient for competitive placements. In reality, you will likely need a \textbf{CGPA of 3.8+} to secure a spot at a Top 30 US university. You also need valid English proof (IELTS 6.5+ or TOEFL 100+).
+\end{itemize}
+
+\subsubsection{Option B: Visiting Student Programs}
+If you cannot secure a spot at your dream school through HKUWW, you should look into **Visiting Student** opportunities on the websites of your desired universities.
+\begin{itemize}
+	\item \textbf{The Difference:}
+	\begin{itemize}
+		\item \textbf{Exchange (HKUWW):} You pay HKU tuition (usually cheaper).
+		\item \textbf{Visiting:} You pay the tuition of the host university (usually much more expensive).
+	\end{itemize}
+	\item \textbf{Why consider it?} It is generally easier to get admitted as a visiting student than as an exchange student because there are fewer quota restrictions. Historically, many HKU students have successfully applied as visiting students to top institutions like \textbf{UC Berkeley} and \textbf{UCLA} when exchange spots were unavailable.
+\end{itemize}
+
+\subsubsection{School Selection Strategy}
+It is advisable to prioritize US schools and top European technical institutes (like EPFL). These institutions provide the vital connections and letters of recommendation needed for graduate school applications.
+
+\noindent \textbf{A Reality Check:} \\
+Competition is fierce. Not everyone will secure a spot at UC Berkeley, UChicago, or Ivy League schools. However, the US academic landscape is different from China or Hong Kong. In China, top researchers are heavily concentrated in the C9 or HK3 universities. In the US, the spread is much broader.
+
+\textbf{Do not be discouraged} if you are assigned to a school like UNC Chapel Hill, UCSD, or other Top 30-50 institutions. These universities house world-class researchers. As long as the school is reputable, you will almost certainly find established professors who fit your research direction.
+
+\subsection{Widen Your Research Horizons \& SRF}
+
+As you dive deeper into your coursework in Year 2, you may still be exploring different research directions. This is the perfect time to broaden your academic scope.
+
+\noindent \textbf{1. Attend Seminars and Talks} \\
+Do not limit yourself to your textbooks. You are strongly advised to check the seminar schedules of various faculties regularly. HKU frequently invites world-class speakers.
+\begin{itemize}
+	\item \textbf{Computing \& Data Science (CDS):}\\ \url{https://www.cs.hku.hk/seminars-events}
+	\item \textbf{Business School (Economics/Finance):}\\ \url{https://www.hkubs.hku.hk/research/seminars-conferences/}
+	\item \textbf{Mathematics:}\\ \url{https://hkumath.hku.hk/web/event/event-seminar.php}
+\end{itemize}
+
+\noindent \textit{A Note on Difficulty:} \\
+You might fear that these talks are too advanced. However, top-tier speakers often make their topics approachable and inspiring to a general audience—with the exception of Mathematics. (Math seminars tend to be highly technical, so don't be discouraged if you get lost!) These events are crucial for developing your "research taste" and understanding the frontiers of science.
+
+\noindent \textbf{2. Summer Research Fellowship (SRF)} \\
+\url{https://www.scifac.hku.hk/current/ug/el/research/srf-orf}
+
+In your Year 2, you should apply for the \textbf{Summer Research Fellowship (SRF)}. This scheme provides a stipend for you to conduct research under a supervisor in the Faculty of Science.
+\begin{itemize}
+	\item \textbf{The Deliverable:} Aside from the research itself, you will participate in a poster presentation. This is excellent practice for explaining your work to both general audiences and grading panels.
+	\item \textbf{Strategic Supervisor Selection:} It is highly advisable to choose a \textbf{different professor} than the one you worked with in Year 1.
+	\item \textbf{Why?} US Graduate Schools typically require \textbf{three letters of recommendation}. By working with a new professor in Year 2, you secure your second strong letter. Be bold and reach out to new faculty members!
+\end{itemize}
+
+\noindent \textbf{Sidenote: SCNC3111 Strategy} \\
+To fulfill the requirements of SRF (or similar schemes like the Young Scientist Scheme), you may be required to enroll in \textit{SCNC3111 Frontiers of Science Honours Seminar}.
+\\ \textbf{Advice:} Many students find this course time-consuming relative to the value gained. If the regulations allow, \textbf{postpone this course to Year 4}. Your time in Year 2 and 3 is better spent on core math courses and actual research.
+
+
+\chapter{Capstone, Exchange, and Advanced Research}
+
+Welcome to Year 3. This is arguably the most dynamic year of your undergraduate studies. You will likely be juggling advanced coursework, a capstone project, and preparations for your semester abroad.
+
+\section{The Capstone Project (MATH3999 vs. MATH4999)}
+Towards the end of Year 2, the Department of Mathematics will circulate a list of topics for the capstone courses: \textbf{MATH3999 (Directed Studies in Mathematics)} and \textbf{MATH4999 (Mathematics Project)}. These are project-based courses where you work closely with a supervisor.
+
+\noindent \textbf{Selection Strategy:} \\
+Review the list of topics carefully. If you find a topic that interests you, contact the supervisor immediately to discuss potential supervision.
+
+\noindent \textbf{Which one to take?}
+\begin{itemize}
+	\item \textbf{MATH4999:} A full-year course (Semester 1 \& 2).
+	\item \textbf{MATH3999:} A one-semester course.
+\end{itemize}
+
+\noindent \textbf{Recommendation:} \\
+Since you are planning to go on exchange in Semester 2 (as discussed in the previous chapter), you are strongly advised to take \textbf{MATH3999 in Semester 1}. This allows you to complete your capstone requirement before leaving Hong Kong.
+
+\noindent \textbf{Portfolio Building:} \\
+The primary deliverable for MATH3999 is a research report. Do not just let this report sit on your hard drive.
+\\ \textbf{Pro Tip:} Upload your code and the PDF of your report to a public \textbf{GitHub repository}. This creates a tangible portfolio link that you can include in your CV and graduate school applications, demonstrating your technical skills and ability to document research.
+
+\section{Exchange (Semester 2)}
+After finishing your capstone and exams in Semester 1, you will embark on your exchange journey. This is a pivotal moment to experience a new academic culture and expand your network.
+
+\subsection{Course Selection Strategy}
+
+While the HKU Department of Mathematics is expanding and securing more funding, it remains relatively small compared to the massive departments found at major US or European universities.
+
+\noindent \textbf{1. Maximize Academic Value: Take Unique Courses} \\
+Mathematics is universal; "Linear Algebra" is the same in Hong Kong as it is in California. While this makes transferring credits for core courses easy, it is not the most efficient use of your exchange.
+\\ \textbf{Advice:} Prioritize courses that are \textbf{NOT offered at HKU}. Look for specialized topics or advanced electives that reflect the specific research strengths of your host institution. This allows you to learn material you otherwise wouldn't have access to.
+
+\noindent \textbf{2. Clear Your Common Cores} \\
+Do not forget the practical side of degree management. Exchange is an excellent opportunity to clear your \textbf{Common Core (CC)} requirements. You can often find general education courses at your host university that are interesting (or at least less burdensome than HKU CCs) and transfer them back. This frees up valuable time in your final year for research and graduate school applications.
+
+\subsection{Overseas Summer Research}
+
+We now arrive at the primary strategic goal of your exchange semester: conducting foreign summer research to build international connections.
+
+\subsubsection{The Strategy: Cold Emailing}
+You are strongly advised to research professors within your host university's faculty (or nearby institutions) and review their webpages.
+\begin{itemize}
+	\item \textbf{The Process:} Identify professors whose work interests you and send them a polite, professional email inquiring about summer research opportunities.
+	\item \textbf{The Numbers Game:} Do not get discouraged by silence or rejection. It is a numbers game. One previous student sent out over 20 emails seeking summer opportunities. He received only two replies: one professor was retiring, but the other offered him a position. That single opportunity eventually helped him secure the prestigious \textbf{HKPFS (Hong Kong PhD Fellowship Scheme)}. You only need one "Yes."
+\end{itemize}
+
+\subsubsection{Funding Sources}
+Research positions in the US or Europe are often unpaid for visiting students. However, HKU Faculty of Science offers specific funding schemes to support you.
+
+\begin{enumerate}
+	\item \textbf{Overseas Research Fellowship (ORF)} \\
+	\url{https://www.scifac.hku.hk/current/ug/el/research/srf-orf} \\
+	This scheme is designed specifically to support students going to overseas laboratories.
+	\begin{itemize}
+		\item \textbf{Financial Support:} Typically provides a stipend (e.g., approx. HK\$16,000) plus reimbursement for airfare (usually 80\% of actual cost, capped at HK\$12,000).
+		\item \textbf{Flexibility:} This is generally easier to apply for than URFP and does not necessarily require a full-year follow-up project.
+	\end{itemize}
+	
+\item \textbf{Undergraduate Research Fellowship Programme (URFP)} \\
+\url{https://tl.hku.hk/urfp/} \\
+This is a prestigious and more demanding option.
+\begin{itemize}
+	\item \textbf{Eligibility:} Officially, you need to be in the top 90th percentile (top 10\%) or have a CGPA $\geq$ 3.50. However, realistically, due to intense competition, a \textbf{CGPA of 3.8+} is often required to secure a spot.
+	\item \textbf{The Commitment:} URFP requires you to undertake a research study (typically enrolling in MATH4999 in the coming Year 4). The summer internship (at least 8 weeks) serves as the foundational phase of this year-long research.
+	\item \textbf{Funding:} If selected for the overseas internship award, you may receive up to \textbf{HK\$40,000}. Note that this funding is University-wide, making the competition extremely keen.
+\end{itemize}
+
+\end{enumerate}
+
+\subsubsection{Host University Programs}
+Finally, check if your intended graduate school or host university offers formal summer training programs (often called REUs in the US).
+\\ \textit{Warning:} Be aware that many US-funded programs (like NSF REUs) are restricted to US citizens. However, some universities have private funding for international students or specific "Summer Research Programs" (SRP) similar to HKU's, designed to attract potential PhD applicants.
+
+
+\subsubsection*{The Hidden Test: Resilience and Isolation}
+
+A crucial, often overlooked aspect of overseas research is that it serves as a litmus test for your resilience to pursue a PhD abroad. Beyond the academic rigor, you must be prepared for a degree of social isolation. Unlike your undergraduate days, you may not make friends easily and will often have to carry out your research project entirely independently, all while navigating a foreign environment full of unfamiliar faces and food.
+
+The psychological toll is real; in fact, some excellent students find this lifestyle incompatible with their happiness and choose to stay at HKU for their graduate studies after such an experience. However, we urge you to persist. Please view these challenges not as obstacles, but as essential nutrition for your personal growth. Learning to survive and thrive in solitude is a critical skill. This internal development is just as valuable as the external rewards of research experience and recommendation letters, providing the foundation you need to flourish in your future academic career.
+
+
+
+
+\chapter{Graduate School Application}
+
+\section{Standardized Testing (TOEFL \& GRE)}
+
+We now enter the final stretch of your undergraduate journey. Since you are targeting PhD programs in Applied Sciences or Applied Mathematics, you must navigate the requirements for standardized testing carefully.
+
+\noindent \textbf{The GRE (Graduate Record Examination):} \\
+While many pure mathematics departments have dropped the GRE requirement, applied fields—especially Operations Research (OR), Financial Engineering, or Statistics—are often housed within Engineering or Business schools in the US. These departments are more likely to still require or strongly recommend the GRE.
+\begin{itemize}
+	\item \textbf{Strategy:} Although most programs list the GRE as "optional," we strongly advise you to take it to maximize your chances. A high quantitative score is a standard expectation for HKU Math students.
+	\item \textbf{Resources:} You can find useful GRE preparation materials in this repository: \\
+	\url{https://github.com/Liu-Zhonglin/HKU-MATH-Notes/tree/main/GRE}
+\end{itemize}
+
+\noindent \textbf{The TOEFL (Test of English as a Foreign Language):} \\
+Even though HKU is an English-medium university, which allows you to waive language requirements for many programs (especially in the UK and Canada), some top-tier US universities are strict and may still demand a TOEFL score. It is safer to have a valid score on hand than to be disqualified on a technicality.
+\section{Prepare Your CV}
+
+Your Curriculum Vitae (CV) is the first document an admissions committee will review. Unlike a professional resume used for industry jobs, an academic CV must focus entirely on your \textbf{research potential}.
+
+\textbf{Recommended Structure}
+\begin{enumerate}
+	\item \textbf{Education:} State your CGPA  and major(s) at HKU. Do not forget to include your Exchange University and the grades obtained there.
+	\item \textbf{Research Experience (Crucial):} This is the most important section. Detail your URFP, summer research fellowships, and capstone projects here. Describe the problem, your method, and the result.
+	\item \textbf{Publications and Manuscripts:} If you have any papers published, list them. If not, list work that is "Submitted" or "In Preparation."
+	\item \textbf{Work Experience:} You may list industry internships, but be aware that for a PhD application, standard corporate roles are usually not significant unless they involved R\&D.
+	\item \textbf{Honors and Awards:} Scholarships, Dean's List, and competition results.
+	\item \textbf{Additional Information:} List specific graduate-level courses you have taken to demonstrate mathematical rigor. You may also include relevant volunteering experience.
+\end{enumerate}
+
+
+
+\textbf{Use explicit URLs (do not rely on clickable hyperlink text).}\\
+When listing your GitHub, personal website, or project pages, \textbf{avoid} hiding links behind words (e.g., avoid \verb|\href{https://github.com}{My Project}|). Some application portals preprocess uploaded PDFs (e.g., flattening them into images or extracting plain text), which can break clickable links or remove link targets entirely. Instead, write the full URL in the document so reviewers can read and copy it directly (e.g., \verb|https://github.com/USERNAME/REPO|).
+
+\vspace{0.75em}
+\noindent\textit{Note: A \LaTeX{} template for an academic CV is provided in the \texttt{smame} folder as part of this compass source.}
+
+
+
+
+
+\section{Program Selection}
+Program selection is often the most stressful part of the entire PhD-prep process. By the end of Year 3, you should have at least a tentative direction (e.g., applied mathematics in general, scientific computing, computational biology, economics/finance, operations research, statistics/ML, or related applied sciences). The key is to translate that direction into a list of programs where you can (i) do the kind of work you want and (ii) receive strong mentorship and training.
+
+\subsection{Two common PhD admission styles}
+Different systems place decision power in different hands. Understanding this changes how you email, how you write your SOP, and how you choose schools.
+
+\textbf{PI-driven programs.}
+A faculty member (or a small group) has strong influence over admissions and funding decisions. Typical signals:
+\begin{itemize}
+	\item You are expected to email potential supervisor(s) in advance.
+	\item Funding may be tied to a specific lab or grant.
+\end{itemize}
+
+\textbf{Committee-biased (central admissions) programs.}
+A department-wide committee makes most decisions. Typical signals:
+\begin{itemize}
+	\item Professors may reply to emails but cannot promise admission.
+	\item Funding is more standardized (e.g., TA/RA packages decided by the department).
+	\item Fit still matters, but networking has less direct impact.
+\end{itemize}
+
+In practice, many US programs are \emph{mixed}: a committee admits you, but faculty interest can strongly help, especially in applied areas where grants and labs matter.
+
+\subsection{HKU as a ``Base Option''}
+Let us first address securing a place for a PhD at HKU, which is likely your most accessible option. However, there are specific administrative hurdles you must be aware of.
+
+\textbf{The First Class Honours Rule} \\
+Our school has a strict rule: only students with \textbf{First Class Honours (CGPA 3.6+)} are eligible for direct PhD entry. This is why we emphasized keeping your GPA high in earlier chapters.
+\begin{itemize}
+	\item If your CGPA is \textbf{below 3.6}, no matter how strong your research is, you are generally only eligible to compete for an MPhil.
+	\item \textbf{The MPhil Trap:} MPhil and PhD funding come from the same pool. Most professors prefer to hire PhD students rather than MPhil students (who typically leave after two years to pursue a PhD at a better institution). Consequently, admission for an MPhil can be even more competitive than for a PhD.
+\end{itemize}
+
+\textbf{The Admission Style: Supervisor-Biased} \\
+The Department of Mathematics at HKU is largely \textbf{supervisor-biased} (PI-driven). This means you must contact a professor and secure their support before you can be admitted.
+
+\textbf{The Timing Dilemma} \\
+HKU typically delivers offers earlier than US schools to secure talent. This creates a delicate situation:
+\begin{itemize}
+	\item If you apply to US graduate schools simultaneously, a potential HKU supervisor may be unwilling to reserve a spot for you. They know that if you get a US offer, you will likely leave, and they do not want to be treated merely as a ``safety net.''
+	\item However, some supportive professors may be kind enough to offer you an HKU PhD spot as a safe option. Be transparent, and be grateful for their support.
+\end{itemize}
+
+\textit{Sidenote on HKPFS:} You can also compete for the Hong Kong PhD Fellowship Scheme (HKPFS).
+Be aware that for HKPFS, your GPA is the dominant factor; publications and research experience count,
+but they rarely outweigh a lower GPA in this specific scheme. You may refer to the following materials
+to prepare for the HKPFS interview:
+\url{https://github.com/Liu-Zhonglin/HKU-MATH-Notes/tree/main/HKPFS\%20Prep}.
+
+
+\subsection{US PhD program selection}
+US PhD programs vary widely in structure. ``Applied Mathematics'' can live in a math department, an applied math institute, statistics, industrial engineering/OR, computer science, or even domain departments (bioengineering, economics, etc.). Use the checklist below to build a list that is both ambitious and realistic.
+
+\vspace{0.5em}
+\noindent \textbf{Pro-Tip: Leverage AI for Initial Discovery} \\
+Before manually scouring hundreds of department websites, it is highly advised to feed your CV to an AI model with deep search capabilities (such as \textbf{Gemini's Deep Research mode} or similar tools). This can help you quickly navigate the vast landscape of programs to find those that fit your specific niche.
+
+\noindent \textit{Example Prompt:}
+\begin{quote}
+	``Here is my CV (attached). I am applying for PhD programs in [Field, e.g., Applied Mathematics/Operations Research] in the US. Based on my research experiences and coursework highlighted in the CV, please perform deep research to identify 12--15 suitable US PhD programs.
+	
+	For each program, identify 2--3 specific faculty members whose recent work (last 5 years) aligns with my background in [Specific Topic A] and [Specific Topic B]. 
+	
+	(Optional: Pay special attention to new Assistant Professors or `rising stars' who are actively building their groups/labs, as established professors may have higher requirements.)''
+\end{quote}
+
+\subsubsection{1. Choose by \emph{people} and \emph{training}, not only by school name}
+Rankings matter less than having multiple active faculty who can advise you. For each program, check:
+\begin{itemize}
+	\item \textbf{At least 2--4 faculty} doing work you would \textbf{genuinely} want to pursue.
+	\item Recent publications (past 2--3 years), current students, and active grants/projects.
+	\item Whether the department is strong in your \emph{method} (e.g., PDE/analysis, optimization, stochastic processes, numerical methods) \emph{and} your \emph{application domain} (bio, finance, ML, OR, etc.).
+\end{itemize}
+
+\subsubsection{2. Match your profile to department ``signals''}
+Different departments value different evidence:
+\begin{itemize}
+	\item \textbf{Math / Applied Math:} Proof-based strength, real analysis/linear algebra depth, letters that speak to mathematical maturity.
+	\item \textbf{OR / IE / Systems:} Optimization + probability + algorithms + strong quantitative record; GRE may still be requested in some engineering schools.
+	\item \textbf{Stats / Data Science:} Probability, inference, linear models, computation; evidence you can work with data and do careful empirical work.
+	\item \textbf{CS / ML (research):} Strong coding, research artifacts (preprints, repos), and letters from research supervisors.
+\end{itemize}
+Apply to the \emph{department that will value your strongest evidence}.
+
+\subsubsection{3. Build a balanced list}
+A practical approach is:
+\begin{itemize}
+	\item \textbf{Reach:} Programs where admission is unlikely but possible with your profile.
+	\item \textbf{Match:} Programs where your stats and research fit the typical admitted range.
+	\item \textbf{Safety:} Programs where you would still be happy and have multiple potential advisors.
+\end{itemize}
+Even very strong applicants should include ``safety'' schools, because admissions are noisy and advisor availability changes yearly.
+
+\subsubsection{4. Should I email professors?}
+Based on past experience, the answer depends entirely on the program type:
+\begin{itemize}
+	\item \textbf{For PI-driven programs (e.g., HKU, specific applied labs):} \textbf{Definitely Yes.} You often will not have a chance to get into the program without a specific professor's support.
+	\item \textbf{For Top 30 US Schools (Committee-driven):} \textbf{Usually Meaningless.} Most of these schools have central admissions committees. If you email a famous professor, you will likely get no reply or a standard template response (e.g., \textit{``Thank you for your interest, please apply through our portal...''}). Do not waste time on this unless you have a genuine connection or specific question about their work.
+\end{itemize}
+
+\section{Statement of Purpose (SoP)}
+
+Although these are arguably the least weight-bearing parts of your application compared to GPA and research, every program requires them.
+
+\textbf{Narrative is Key:} Personal advice is to connect your research experiences into a cohesive narrative. Do not just list your achievements; \textit{tell a story}.
+
+\textbf{Polishing:} After finalizing your draft, remember to search for the official guidance provided by each specific school. You can feed these requirements into an AI tool as a prompt to help polish your writing to fit their specific criteria.
+
+\textbf{The Most Important Part:} At the end of the SoP, clearly state 2--3 professors you intend to work with in the department. (Realistically, admissions committees may only read this part). 
+
+\textbf{Commitment to Academia:} Top US schools are investing in future researchers, not industry professionals. Therefore, you should explicitly state your intention to pursue a career in academia. Even if you are unsure, framing your application around a research career aligns better with the expectations of PhD admissions committees.
+
+
+\textit{Note: A recommended LaTeX template for the SoP is here: \url{https://www.overleaf.com/latex/templates/statement-of-purpose-template-with-example-text/kypjchktpzzk}}
+
+\section{Recommendation Letters}
+
+If you have followed the roadmap in the previous chapters, you should by now have established working relationships with at least three professors. Most US graduate programs require exactly three letters of recommendation.
+
+
+\subsection{Strategic Assignment}
+Create a spreadsheet containing your target schools and their respective deadlines. Categorize them and match them to your professors' expertise:
+\begin{itemize}
+	\item \textbf{Match by Expertise:} If you are applying to a program famous for Applied Probability, ensure your recommender in that field writes for that school.
+	\item \textbf{Leverage Connections:} This is crucial. Check your supervisors' backgrounds. If a professor received their PhD from University $X$, did a postdoc at University $Y$, or actively collaborates with a group at University $Z$, their letter will carry significantly more weight at those specific institutions.
+\end{itemize}
+
+\subsection{The Request Process}
+\begin{enumerate}
+	\item \textbf{Timeline:} Send your formal email requests \textbf{no later than November}. Professors are busy, and writing a strong letter takes time.
+	\item \textbf{The Portal Trigger:} Once they agree, you will need to input their details into the application portals to trigger the upload link.
+	\item \textbf{The ``Waive Right'' Convention:} When registering your recommenders in the system, you will be asked if you wish to waive your right to view the letter. \textbf{ALWAYS select ``Yes'' (Waive your right).}
+	This is the standard academic convention.
+	
+\end{enumerate}
+	
+	
+\section{Interview}
+
+Receiving an interview invitation is an excellent sign; it typically means you have passed the initial screening and are now one step away from admission. Do not go in unprepared. You can often find specific interview questions, recent applicant experiences, and timeline information shared by other applicants on platforms like \textbf{Xiaohongshu}. When preparing, you are strongly advised to create your own interview cheat sheet by running mock interviews with an AI tool and summarizing your strongest answers. A sample PhD interview cheat sheet is included in the same folder as the \LaTeX{} source of this compass; reviewing it (and adapting it to your background) can give you an advantage in anticipating what the committee will ask.
+
+During the interview:
+\begin{itemize}
+	\item \textbf{Be Bold:} Do not be afraid to discuss your research contributions and your future ideas.
+	\item \textbf{Speak Clearly:} Articulate your thoughts logically. Communication skills are often just as important as technical knowledge.
+	\item \textbf{Prepare Questions:} The interview panel will almost always reserve time at the end for you to ask questions. Have thoughtful questions ready; this demonstrates your genuine interest and preparation.
+\end{itemize}
+	
+	
+	
+	
+	
+	
+	\chapter*{Epilogue: Beyond the Compass}
+	\addcontentsline{toc}{chapter}{Epilogue: Beyond the Compass}
+We have bombarded you with strategies, administrative hacks, course sequences, and ``survival tips.'' If you have read this far, you might feel a mix of excitement and anxiety. That is entirely normal. The path of a rigorous Mathematics major at HKU is not easy. You will inevitably face problem sets that seem impossible, proofs that refuse to close, and moments where you question if you are ``smart enough'' compared to the peers sitting next to you. However, we want to remind you that while we have emphasized GPA, exchange offers, and PhD admissions, these metrics do not define your worth. Mathematics is an art form, not just a competition. Some of the best researchers were late bloomers, and some of the most brilliant minds struggled with standard exam formats. Use the strategies in this guide to play the academic game effectively, but do not lose your love for the subject in the process.\\
+
+In a department full of brilliant minds, it is also easy to fall victim to Imposter Syndrome. You may look at the ``Math Gods'' in your cohort and feel like a fraud, but remember that everyone struggles. Research is, by nature, 90\% failure and 10\% breakthrough. If you are stuck, it usually means you are doing it right. Do not let the pressure of grades or the prestige of graduate schools paralyze you. The skills you are building---rigorous logic, resilience in the face of complex problems, and the ability to learn independently---will serve you well regardless of where you end up.\\
+
+Finally, this guide exists only because seniors before us took the time to share their notes, their failures, and their advice. We are handing this Compass to you now, but it is a living document. In a few years, when you are the one securing that offer from a top institution or solving a complex problem, remember to look back. Update this guide, mentor a junior, or simply share your code. The HKU Math community is small; we survive and thrive by helping each other. 
+
+	
+	\vspace{1cm}
+	
+	\noindent Go forth, explore the unknown, and enjoy the beauty of the abstract.
+	
+	\vspace{1cm}
+	
+	\hfill \textit{The Authors} \\
+	
+	\hfill \textit{HKU, 2026}
+
+	
+	% --- BACK MATTER ---
+%	\backmatter
+%	
+%	\chapter{Appendix}
+
+	
+\end{document}
