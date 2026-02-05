@@ -14,7 +14,7 @@ This repository contains the LaTeX source so anyone can **download, compile, edi
 2. **Edit the main file**
    - Open and edit: `Guide.tex` (main LaTeX source file).
    - You can edit using **Overleaf** (upload the ZIP) or a **local LaTeX installation**.
-   - Compile `Guide.tex` to produce `Guide.pdf` (using pdfLaTeX / latexmk).
+   - Compile `Guide.tex` to produce `Guide.pdf`.
 
 3. **Share your updated version**
    - If you want to contribute back to this repository, open a **Pull Request** with your changes (updated `.tex` files and any required assets).
