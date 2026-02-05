@@ -6,24 +6,31 @@ This repository contains the LaTeX source so anyone can **download, compile, edi
 
 ---
 
-## How to update the Compass (download → edit → compile)
 
-1. **Download the source**
-   - Click the green **Code** button → **Download ZIP**, then unzip it.
+# Contributing
 
-2. **Edit the main file**
-   - Open and edit: `Guide.tex` (main LaTeX source file).
-   - You can edit using **Overleaf** (upload the ZIP) or a **local LaTeX installation**.
-   - Compile `Guide.tex` to produce `Guide.pdf`.
+Thanks for helping improve HKU Math Compass.
 
-3. **Share your updated version**
-   - If you want to contribute back to this repository, open a **Pull Request** with your changes (updated `.tex` files and any required assets).
-   - The maintainer will review and merge if appropriate.
+## The workflow (recommended)
+1. Fork this repository (or click the pencil icon to edit a file—GitHub will guide you).
+2. Make changes in your fork/branch.
+3. Open a Pull Request (PR) back to `main`.
+4. The maintainer will review and merge.
 
----
+## What to edit
+- Main source: `Guide.tex`
+- Other materials may live under `Cheat Sheet/` and `Academic_CV_Template/`.
 
-## Notes
-- This guide may become outdated—please verify time-sensitive info with official HKU sources.
-- Please avoid adding personal data or identifying information.
+## Contribution rules
+- Keep the guide student-friendly, factual, and concise.
+- Do not add personal data (names, phone numbers, student IDs, private emails, etc.).
+- If you add specific claims (e.g., course policies), include a source or date.
+- Prefer small PRs focused on one change (typo fix, a single section update, etc.).
+
+
+## What happens after you open a PR
+The maintainer may request edits before merging.
+
+
 
 
