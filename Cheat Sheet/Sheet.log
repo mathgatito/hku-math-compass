@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.29)  4 FEB 2026 19:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.29)  10 FEB 2026 19:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -378,57 +378,34 @@ Overfull \hbox (39.5716pt too wide) in paragraph at lines 87--88
 [1
 
 {/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 164.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\rightarrow' on input line 164.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 164.
-
-
 Overfull \hbox (15.23659pt too wide) in paragraph at lines 176--177
 []\OT1/cmr/m/n/10.95 What changed: from op-ti-miz-ing $[]$ to op-ti-miz-ing/und
 erstanding $[]$ 
  []
 
 [2] [3] (./Sheet.aux)
-
-Package rerunfilecheck Warning: File `Sheet.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `Sheet.out':
-(rerunfilecheck)             Before: AB33AC61114A3B498C66A1E8476995BC;2586
-(rerunfilecheck)             After:  59704D56D73441D14131B011FFBE4158;2382.
+Package rerunfilecheck Info: File `Sheet.out' has not changed.
+(rerunfilecheck)             Checksum: 42847A07EB911268138AAD8E944CDF91;2511.
  ) 
 Here is how much of TeX's memory you used:
- 9914 strings out of 478268
- 152254 string characters out of 5846346
- 467322 words of memory out of 5000000
- 28007 multiletter control sequences out of 15000+600000
+ 9912 strings out of 478268
+ 152234 string characters out of 5846346
+ 467327 words of memory out of 5000000
+ 28006 multiletter control sequences out of 15000+600000
  480625 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,6n,63p,430b,443s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{section.6} has been referenced but does not exist, 
-replaced by a fixed one
-
-{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<
-/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></
-usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></u
-sr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
-local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/l
-ocal/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
-Output written on Sheet.pdf (3 pages, 102585 bytes).
+ 60i,6n,63p,559b,443s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
+}</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+</usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
+/usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
+sr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
+r/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr
+/local/texlive/2022/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb>
+Output written on Sheet.pdf (3 pages, 102226 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
- 19 named destinations out of 1000 (max. 500000)
- 89 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 100 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
+ 18 named destinations out of 1000 (max. 500000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
